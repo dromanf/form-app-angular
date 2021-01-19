@@ -14,7 +14,7 @@ const persistContactMessage = async (contact) => {
     //Revisamos si el contacto cumple con todos los campos requeridos
     if(!validateRequiredFileds(contact)) {
         console.error('Todos los campos son requeridos, por favor validar');
-        throw new Error('Todos los campos son requeridos, por favor validar')
+        throw new Error('Todos los campos son requeridos, por favor validar');
     }
 
     try {
