@@ -13,15 +13,15 @@ const validateRequiredFileds = (contact) => {
 const persistContactMessage = async (contact) => {
     //Revisamos si el contacto cumple con todos los campos requeridos
     if(!validateRequiredFileds(contact)) {
-        console.error('all fileds are required');
-        throw new Error('all fields are required')
+        console.error('Todos los campos son requeridos, por favor validar');
+        throw new Error('Todos los campos son requeridos, por favor validar')
     }
 
     try {
         const result = await contactRepository.persistComment(contact);
         return result;
     }catch(err) {
-        console.error('Error with DB', err);
+        console.error('Error de conexion con la base de datos', err);
         throw new Error( err.message);
     }
    
