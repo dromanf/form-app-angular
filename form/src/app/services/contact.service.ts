@@ -11,6 +11,7 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   public sendComment(comment: Comment) {
+    /* Se recibe el comentario del formulario, para enviarlo al backend */
     console.log('sending comment', comment);
     this.http.post<Comment>(`${environment.API_URL}/contact`, comment)
     .subscribe(res => console.log(res));
